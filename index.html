@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HybriDent — Advanced Dental Care</title>
+<meta name="description" content="Advanced dental technology meets personalized care. Book your appointment at HybriDent today.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: { primary:'#0D9488', secondary:'#0EA5E9', dark:'#0F172A' },
+    fontFamily: {
+      sans: ['Inter','system-ui','sans-serif'],
+      serif: ['"Playfair Display"','Georgia','serif'],
+      display: ['Outfit','system-ui','sans-serif']
+    }
+  }}
+};
+</script>
+
+<style>
+:root{ --primary:#0D9488; --secondary:#0EA5E9; --dark:#0F172A; }
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:#334155;background:#f8fafc;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+h1,h2,h3,h4,.font-serif{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-0.015em;line-height:1.15;}
+nav,button,.btn,.nav-link,.nav-brand{font-family:'Outfit',system-ui,sans-serif;}
+
+/* ================= PRELOADER ================= */
+#preloader{position:fixed;inset:0;background:#fff;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity .6s;}
+#preloader.hidden{opacity:0;pointer-events:none;}
+.pre-ring{width:70px;height:70px;border:3px solid #e2e8f0;border-top-color:#0D9488;border-radius:50%;animation:spin 1s linear infinite;position:absolute;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ================= GLASS NAVBAR ================= */
+.nav-wrap{position:fixed;top:16px;left:0;right:0;z-index:9000;padding:0 20px;transition:all .4s cubic-bezier(.4,0,.2,1);}
+.nav-pill{
+  max-width:1200px;margin:0 auto;border-radius:999px;padding:10px 12px 10px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  transition:all .4s ease;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.9);
+  box-shadow:0 8px 32px rgba(15,23,42,0.12), inset 0 1px 0 rgba(255,255,255,0.95);
+}
+.nav-wrap.scrolled .nav-pill{background:rgba(255,255,255,0.98);box-shadow:0 10px 40px rgba(15,23,42,0.15), inset 0 1px 0 rgba(255,255,255,1);}
+.nav-brand{font-family:'Outfit',sans-serif;font-weight:700;font-size:20px;color:#0F172A;display:flex;align-items:center;gap:8px;transition:color .3s;white-space:nowrap;text-decoration:none;}
+.nav-brand:hover{color:var(--primary);}
+.nav-link{font-size:14px;font-weight:600;color:#334155;padding:8px 4px;position:relative;transition:color .3s;letter-spacing:0.01em;text-decoration:none;}
+.nav-link:hover{color:var(--primary);}
+.nav-link.active{color:var(--primary);}
+.nav-link.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:18px;height:2.5px;background:var(--primary);border-radius:2px;}
+.nav-cta{background:linear-gradient(135deg,#0D9488 0%,#0EA5E9 100%);color:#fff;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:0 4px 14px rgba(13,148,136,0.4), inset 0 1px 0 rgba(255,255,255,0.25);transition:all .3s ease;white-space:nowrap;text-decoration:none;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,148,136,0.55);}
+#mobile-menu-btn{color:#0F172A;font-size:22px;padding:8px;background:transparent;border:none;cursor:pointer;align-items:center;justify-content:center;border-radius:10px;transition:background .2s;}
+#mobile-menu-btn:hover{background:rgba(15,23,42,0.05);}
+@media (max-width:1023px){ #mobile-menu-btn{ display:flex; } }
+@media (min-width:1024px){ #mobile-menu-btn{ display:none !important; } }
+#mobile-menu{max-width:1200px;margin:12px auto 0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-radius:24px;border:1px solid rgba(255,255,255,0.6);box-shadow:0 20px 40px rgba(15,23,42,0.12);padding:16px;}
+#mobile-menu a{display:block;padding:12px 16px;border-radius:12px;color:#334155;font-weight:500;font-size:15px;transition:all .2s;text-decoration:none;}
+#mobile-menu a:hover{background:#f1f5f9;color:var(--primary);}
+
+/* ================= BLOBS ================= */
+.blob{position:absolute;border-radius:50%;filter:blur(90px);z-index:0;pointer-events:none;}
+.blob-1{top:-100px;left:-100px;width:460px;height:460px;background:radial-gradient(circle,#0D9488,transparent 70%);opacity:.3;}
+.blob-2{bottom:-120px;right:-80px;width:560px;height:560px;background:radial-gradient(circle,#0EA5E9,transparent 70%);opacity:.2;}
+
+/* ================= PAGE BANNERS ================= */
+.page-banner{position:relative;overflow:hidden;padding:150px 0 90px;isolation:isolate;}
+.page-banner .banner-bg{position:absolute;inset:0;z-index:-3;background-size:cover;background-position:center;animation:kenburns 22s ease-in-out infinite alternate;}
+@keyframes kenburns{0%{transform:scale(1);}100%{transform:scale(1.15);}}
+.page-banner::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(13,148,136,0.8) 100%);}
+.page-banner::after{content:'';position:absolute;inset:0;z-index:-2;background-image:radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06) 0%, transparent 40%),radial-gradient(circle at 80% 70%, rgba(94,234,212,0.08) 0%, transparent 40%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><g fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1.5'><path d='M50 100 Q50 60 70 60 Q90 60 90 100 Q90 140 70 160 Q50 140 50 100 Z'/><path d='M300 250 Q300 210 320 210 Q340 210 340 250 Q340 290 320 310 Q300 290 300 250 Z'/><circle cx='200' cy='80' r='40'/><circle cx='150' cy='330' r='60'/></g></svg>");background-size:cover, cover, 400px 400px;background-position:center, center, top left;opacity:.7;animation:illustrationDrift 40s linear infinite;}
+@keyframes illustrationDrift{0%{background-position:center, center, 0 0;}100%{background-position:center, center, 400px 400px;}}
+
+/* ================= PAGES ================= */
+.page{display:none;}
+.page.active{display:block;animation:pageFade .5s ease;}
+@keyframes pageFade{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* ================= HERO ================= */
+.hero-home{position:relative;background:linear-gradient(135deg,#0A1628 0%,#0F172A 50%,#0D5B54 100%);isolation:isolate;}
+.hero-home .hero-img-layer{position:absolute;inset:0;z-index:-3;background-image:url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=80');background-size:cover;background-position:center;opacity:0.15;animation:kenburns 30s ease-in-out infinite alternate;}
+.hero-home::before{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.75) 50%, rgba(13,91,84,0.6) 100%),radial-gradient(circle at 80% 20%, rgba(13,148,136,0.25), transparent 55%);}
+.hero-home::after{content:'';position:absolute;inset:0;z-index:-1;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><g fill='none' stroke='rgba(94,234,212,0.07)' stroke-width='1.5'><path d='M80 140 Q80 90 105 90 Q130 90 130 140 Q130 190 105 220 Q80 190 80 140 Z'/><path d='M380 320 Q380 270 405 270 Q430 270 430 320 Q430 370 405 400 Q380 370 380 320 Z'/><circle cx='260' cy='110' r='50'/><circle cx='200' cy='400' r='75'/><path d='M440 120 Q470 120 470 150 Q470 180 440 180'/><path d='M60 340 Q30 340 30 370 Q30 400 60 400'/></g></svg>");background-size:500px 500px;background-position:top left;opacity:0.6;animation:illustrationDrift 50s linear infinite;pointer-events:none;}
+
+/* ================= HERO IMAGE HOVER ================= */
+.hero-img-wrap{position:relative;border-radius:32px;overflow:hidden;transition:all .6s cubic-bezier(.4,0,.2,1);}
+.hero-img-wrap img{transition:transform 1s cubic-bezier(.4,0,.2,1);display:block;}
+.hero-img-wrap:hover img{transform:scale(1.08) rotate(-1deg);}
+.hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,23,42,0.15),transparent 50%);pointer-events:none;}
+
+/* ================= CARDS ================= */
+.glass-card{background:rgba(255,255,255,0.7);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 8px 32px rgba(15,23,42,0.06), inset 0 1px 0 rgba(255,255,255,0.9);transition:all .4s cubic-bezier(.4,0,.2,1);}
+.glass-card:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(13,148,136,0.18), inset 0 1px 0 rgba(255,255,255,1);border-color:rgba(13,148,136,0.3);}
+.card-hover{transition:all .4s cubic-bezier(.4,0,.2,1);}
+.card-hover:hover{transform:translateY(-10px);box-shadow:0 25px 50px -12px rgba(13,148,136,0.25);}
+.icon-glass{background:linear-gradient(135deg, rgba(13,148,136,0.12), rgba(14,165,233,0.08));border:1px solid rgba(13,148,136,0.15);box-shadow:inset 0 1px 0 rgba(255,255,255,0.8);transition:all .4s ease;}
+.group:hover .icon-glass{background:linear-gradient(135deg,#0D9488,#0EA5E9);box-shadow:0 8px 20px rgba(13,148,136,0.4);}
+.group:hover .icon-glass i{color:#fff;}
+
+/* ================= GALLERY ================= */
+.gallery-item{overflow:hidden;position:relative;border-radius:20px;}
+.gallery-item img{transition:transform .8s cubic-bezier(.4,0,.2,1);width:100%;height:100%;object-fit:cover;display:block;}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,148,136,0.75),transparent 60%);opacity:0;transition:opacity .4s;}
+.gallery-item:hover::after{opacity:1;}
+.gallery-item:hover img{transform:scale(1.15);}
+
+/* ================= FAQ ================= */
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .5s ease;}
+.faq-item.active .faq-answer{max-height:320px;}
+.faq-icon{transition:transform .3s;}
+.faq-item.active .faq-icon{transform:rotate(180deg);}
+
+/* ================= FORM ================= */
+.form-input{width:100%;padding:14px 18px;border-radius:14px;border:1.5px solid #e2e8f0;background:rgba(255,255,255,0.9);font-family:'Inter',sans-serif;font-size:14px;transition:all .25s;backdrop-filter:blur(10px);}
+.form-input:focus{outline:none;border-color:#0D9488;box-shadow:0 0 0 4px rgba(13,148,136,0.12);background:#fff;}
+
+/* ================= TEXT ================= */
+.gradient-text{background:linear-gradient(135deg,#0D9488 0%,#0EA5E9 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+/* ================= BUTTONS ================= */
+.btn-primary{display:inline-flex;align-items:center;gap:10px;justify-content:center;background:linear-gradient(135deg,#0D9488 0%,#0EA5E9 100%);color:#fff;padding:14px 28px;border-radius:999px;font-weight:600;font-size:14px;box-shadow:0 8px 24px rgba(13,148,136,0.35), inset 0 1px 0 rgba(255,255,255,0.25);transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;cursor:pointer;border:none;text-decoration:none;}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent);transition:left .6s;}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(13,148,136,0.5);}
+.btn-primary:hover::before{left:100%;}
+.btn-primary:disabled{opacity:.7;cursor:not-allowed;transform:none;}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;justify-content:center;background:rgba(255,255,255,0.6);backdrop-filter:blur(10px);border:1.5px solid #cbd5e1;color:#0F172A;padding:12px 26px;border-radius:999px;font-weight:600;font-size:14px;transition:all .3s;cursor:pointer;text-decoration:none;}
+.btn-outline:hover{border-color:#0D9488;color:#0D9488;transform:translateY(-2px);box-shadow:0 8px 20px rgba(13,148,136,0.15);}
+.btn-hero-outline{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,0.35);color:#fff;padding:12px 26px;border-radius:999px;font-weight:600;font-size:14px;transition:all .3s;text-decoration:none;}
+.btn-hero-outline:hover{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.6);transform:translateY(-2px);}
+
+/* ================= ANIMATIONS ================= */
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+.float{animation:float 4s ease-in-out infinite;}
+@keyframes pulse-glow{0%{box-shadow:0 0 0 0 rgba(13,148,136,0.6);}70%{box-shadow:0 0 0 18px rgba(13,148,136,0);}100%{box-shadow:0 0 0 0 rgba(13,148,136,0);}}
+@keyframes pulse-glow-green{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+/* ================= SLICK ================= */
+.slick-dots li button:before{color:#0D9488!important;font-size:10px;opacity:.5;}
+.slick-dots li.slick-active button:before{color:#0D9488!important;opacity:1;}
+.slick-prev:before,.slick-next:before{color:#0D9488!important;font-size:32px;}
+.slick-prev{left:-45px;} .slick-next{right:-45px;}
+@media(max-width:768px){.slick-prev,.slick-next{display:none!important;}}
+[data-filter]{transition:all .3s;}
+[data-filter].active-filter{background:linear-gradient(135deg,#0D9488,#0EA5E9);color:white;border-color:transparent;box-shadow:0 6px 16px rgba(13,148,136,0.35);}
+
+/* ================= TOAST ================= */
+#toast{position:fixed;top:100px;right:24px;z-index:99999;background:#fff;border-radius:20px;padding:18px 22px;box-shadow:0 20px 50px rgba(15,23,42,0.2), 0 0 0 1px rgba(13,148,136,0.1);display:flex;align-items:center;gap:14px;transform:translateX(120%);opacity:0;transition:all .5s cubic-bezier(.4,0,.2,1);max-width:380px;}
+#toast.show{transform:translateX(0);opacity:1;}
+#toast .toast-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#0D9488,#0EA5E9);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;flex-shrink:0;box-shadow:0 8px 16px rgba(13,148,136,0.35);}
+#toast .toast-title{font-family:'Outfit',sans-serif;font-weight:700;color:#0F172A;font-size:15px;margin-bottom:2px;}
+#toast .toast-msg{font-size:13px;color:#64748b;line-height:1.4;}
+
+/* ================= FLOATING STACK (Right Side) ================= */
+.floating-stack{
+  position:fixed;
+  bottom:100px;
+  right:24px;
+  display:flex;
+  flex-direction:column-reverse;
+  gap:12px;
+  z-index:40;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+}
+.floating-stack.hidden-stack{
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(20px);
+}
+.float-btn{
+  width:54px;height:54px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:21px;
+  background:linear-gradient(135deg,#0D9488,#0EA5E9);
+  box-shadow:0 8px 22px rgba(13,148,136,0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  cursor:pointer;border:none;text-decoration:none;
+  position:relative;
+}
+.float-btn:hover{transform:translateY(-3px) scale(1.1);box-shadow:0 14px 30px rgba(13,148,136,0.6);}
+.float-btn.whatsapp-btn{
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  box-shadow:0 8px 22px rgba(37,211,102,0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+  animation:pulse-glow-green 2.5s infinite;
+}
+.float-btn.whatsapp-btn:hover{box-shadow:0 14px 30px rgba(37,211,102,0.6);}
+.float-btn.hidden-btn{opacity:0;pointer-events:none;transform:scale(0.7);}
+.float-btn::after{
+  content:attr(data-tip);
+  position:absolute;
+  right:calc(100% + 10px);
+  top:50%;
+  transform:translateY(-50%) translateX(-6px);
+  background:#0F172A;color:#fff;
+  padding:7px 12px;border-radius:8px;
+  font-size:11.5px;font-family:'Outfit',sans-serif;
+  font-weight:500;white-space:nowrap;
+  opacity:0;pointer-events:none;
+  transition:all .25s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+.float-btn:hover::after{opacity:1;transform:translateY(-50%) translateX(0);}
+
+/* ================= CHAT TOGGLE (Bottom Right) ================= */
+#chatToggle{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  z-index:45;
+  width:62px;height:62px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#0D9488,#0EA5E9);
+  color:#fff;font-size:26px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 30px rgba(13,148,136,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  cursor:pointer;border:none;
+  animation:pulse-glow 2.5s infinite;
+}
+#chatToggle:hover{
+  transform:scale(1.1) rotate(-8deg);
+  box-shadow:0 18px 40px rgba(13,148,136,0.7);
+}
+#chatToggle .dot{
+  position:absolute;top:-1px;right:-1px;
+  width:18px;height:18px;
+  background:#ef4444;border-radius:50%;
+  border:3px solid #fff;
+  animation:pulse-glow 2s infinite;
+}
+
+/* ================= CHAT WINDOW ================= */
+#chatWindow{
+  position:fixed;
+  bottom:100px;right:24px;
+  z-index:9500;
+  width:380px;max-width:calc(100vw - 40px);
+  height:560px;max-height:calc(100vh - 140px);
+  background:#fff;border-radius:24px;
+  box-shadow:0 30px 60px rgba(15,23,42,0.25);
+  display:flex;flex-direction:column;overflow:hidden;
+  transform:translateY(20px) scale(0.95);opacity:0;pointer-events:none;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+}
+#chatWindow.open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto;}
+.chat-header{background:linear-gradient(135deg,#0D9488,#0EA5E9);padding:16px 18px;color:#fff;display:flex;align-items:center;gap:12px;border-radius:24px 24px 0 0;}
+.chat-header .avatar{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;border:2px solid rgba(255,255,255,0.4);}
+.chat-close{background:rgba(255,255,255,0.2);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;transition:.2s;}
+.chat-close:hover{background:rgba(255,255,255,0.35);}
+.chat-body{flex:1;overflow-y:auto;padding:18px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);display:flex;flex-direction:column;gap:10px;}
+.chat-body::-webkit-scrollbar{width:5px;}
+.chat-body::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:10px;}
+.msg{max-width:82%;padding:11px 15px;border-radius:18px;font-size:13.5px;line-height:1.5;animation:msgIn .3s ease;word-wrap:break-word;white-space:pre-wrap;}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.msg.bot{background:#fff;border:1px solid #e2e8f0;color:#334155;border-bottom-left-radius:6px;box-shadow:0 2px 8px rgba(15,23,42,0.04);align-self:flex-start;}
+.msg.user{background:linear-gradient(135deg,#0D9488,#0EA5E9);color:#fff;border-bottom-right-radius:6px;align-self:flex-end;box-shadow:0 4px 12px rgba(13,148,136,0.3);}
+.msg.error{background:#fef2f2;border:1px solid #fecaca;color:#dc2626;align-self:flex-start;}
+.chat-suggestions{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px;}
+.chat-suggestions button{background:#f1f5f9;border:1px solid #e2e8f0;color:#475569;padding:6px 11px;border-radius:999px;font-size:11.5px;cursor:pointer;transition:.2s;font-weight:500;}
+.chat-suggestions button:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-1px);}
+.chat-input-wrap{display:flex;gap:8px;padding:12px 14px;border-top:1px solid #e2e8f0;background:#fff;}
+.chat-input-wrap input{flex:1;border:1.5px solid #e2e8f0;border-radius:999px;padding:10px 15px;font-size:13.5px;outline:none;transition:.2s;font-family:'Inter',sans-serif;}
+.chat-input-wrap input:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(13,148,136,0.1);}
+.chat-input-wrap button{background:linear-gradient(135deg,#0D9488,#0EA5E9);color:#fff;border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;transition:.2s;flex-shrink:0;}
+.chat-input-wrap button:hover{transform:scale(1.08);box-shadow:0 4px 12px rgba(13,148,136,0.4);}
+.chat-input-wrap button:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+.typing{display:flex;gap:4px;padding:12px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;border-bottom-left-radius:6px;align-self:flex-start;width:fit-content;}
+.typing span{width:6px;height:6px;background:#94a3b8;border-radius:50%;animation:typing 1.4s infinite;}
+.typing span:nth-child(2){animation-delay:.2s;}
+.typing span:nth-child(3){animation-delay:.4s;}
+@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-6px);opacity:1;}}
+.api-setup{padding:24px;text-align:center;display:flex;flex-direction:column;justify-content:center;height:100%;gap:14px;}
+.api-setup h4{font-family:'Outfit',sans-serif;font-weight:700;color:#0F172A;font-size:18px;}
+.api-setup p{font-size:13px;color:#64748b;line-height:1.6;}
+.api-setup input{width:100%;border:1.5px solid #e2e8f0;border-radius:12px;padding:12px 14px;font-size:13px;font-family:'Inter',sans-serif;outline:none;transition:.2s;}
+.api-setup input:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(13,148,136,0.1);}
+.api-setup button{background:linear-gradient(135deg,#0D9488,#0EA5E9);color:#fff;border:none;padding:12px 20px;border-radius:12px;font-weight:600;font-size:13.5px;cursor:pointer;transition:.2s;font-family:'Outfit',sans-serif;}
+.api-setup button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(13,148,136,0.35);}
+.api-setup .help{font-size:11.5px;color:#94a3b8;margin-top:4px;}
+.api-setup .help a{color:var(--primary);text-decoration:underline;}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px){
+  .nav-pill{padding:8px 10px 8px 18px;gap:12px;}
+  .nav-brand{font-size:18px;}
+}
+@media(max-width:768px){
+  .page-banner{padding:130px 0 70px;}
+}
+@media(max-width:640px){
+  .nav-wrap{top:10px;padding:0 12px;}
+  .nav-pill{padding:8px 8px 8px 16px;}
+  .nav-brand{font-size:16px;}
+  .nav-brand > span:first-child{width:28px !important;height:28px !important;}
+  .nav-brand > span:first-child i{font-size:12px !important;}
+  .page-banner{padding:120px 0 60px;}
+  .floating-stack{bottom:90px;right:16px;gap:10px;}
+  .float-btn{width:48px;height:48px;font-size:19px;}
+  .float-btn::after{display:none;}
+  #chatToggle{bottom:20px;right:16px;width:58px;height:58px;font-size:24px;}
+  #chatWindow{bottom:92px;right:12px;left:12px;width:auto;max-width:none;height:70vh;}
+  #toast{right:12px;left:12px;max-width:none;top:90px;}
+  .btn-primary,.btn-outline,.btn-hero-outline{padding:12px 22px;font-size:13px;}
+}
+@media(max-width:400px){
+  .nav-brand{font-size:15px;gap:6px;}
+  .nav-brand > span:first-child{width:26px !important;height:26px !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader"><div class="pre-ring"></div><i class="fa-solid fa-tooth text-primary text-3xl relative"></i></div>
+
+<!-- TOAST -->
+<div id="toast">
+  <div class="toast-icon"><i class="fa-solid fa-check"></i></div>
+  <div><div class="toast-title" id="toastTitle">Success!</div><div class="toast-msg" id="toastMsg">Your message has been sent.</div></div>
+</div>
+
+<!-- NAVBAR -->
+<div class="nav-wrap" id="navbar">
+  <div class="nav-pill">
+    <a href="#home" data-nav="home" class="nav-brand">
+      <span style="display:inline-flex;width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#0D9488,#0EA5E9);align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(13,148,136,0.4);">
+        <i class="fa-solid fa-tooth" style="color:#fff;font-size:14px;"></i>
+      </span>
+      HybriDent
+    </a>
+    <div class="hidden lg:flex items-center gap-7">
+      <a href="#home" data-nav="home" class="nav-link">Home</a>
+      <a href="#about" data-nav="about" class="nav-link">About</a>
+      <a href="#services" data-nav="services" class="nav-link">Services</a>
+      <a href="#gallery" data-nav="gallery" class="nav-link">Gallery</a>
+      <a href="#pricing" data-nav="pricing" class="nav-link">Pricing</a>
+      <a href="#contact" data-nav="contact" class="nav-link">Contact</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="#contact" data-nav="contact" class="nav-cta hidden md:inline-block">Book Appointment</a>
+      <button id="mobile-menu-btn" class="lg:hidden" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden">
+    <a href="#home" data-nav="home">Home</a>
+    <a href="#about" data-nav="about">About</a>
+    <a href="#services" data-nav="services">Services</a>
+    <a href="#gallery" data-nav="gallery">Gallery</a>
+    <a href="#pricing" data-nav="pricing">Pricing</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+    <a href="#contact" data-nav="contact" style="background:linear-gradient(135deg,#0D9488,#0EA5E9);color:#fff;text-align:center;margin-top:8px;">Book Appointment</a>
+  </div>
+</div>
+
+<main id="app">
+
+<!-- ==================== HOME ==================== -->
+<section id="page-home" class="page active">
+  <div class="hero-home min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+    <div class="hero-img-layer"></div>
+    <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center relative z-10">
+      <div data-aos="fade-right">
+        <span class="inline-flex items-center gap-2 text-teal-300 text-xs font-semibold uppercase tracking-[0.22em] mb-5">
+          <span class="w-8 h-px bg-teal-300"></span> Modern Dental Care
+        </span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl leading-tight text-white mb-6" style="text-shadow:0 2px 20px rgba(0,0,0,0.3);">
+          Advanced Technology for a
+          <em class="not-italic" style="background:linear-gradient(135deg,#5eead4,#7dd3fc);-webkit-background-clip:text;background-clip:text;color:transparent;">Healthier, Brighter</em>
+          Smile
+        </h1>
+        <p class="text-base md:text-lg text-slate-200 mb-8 leading-relaxed max-w-lg" style="text-shadow:0 1px 8px rgba(0,0,0,0.25);">
+          Experience the perfect blend of technology and personalized care at HybriDent. Trusted by 5,000+ happy patients.
+        </p>
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#contact" data-nav="contact" class="btn-primary">Book Appointment <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          <a href="#gallery" data-nav="gallery" class="btn-hero-outline"><i class="fa-solid fa-play text-teal-300 text-xs"></i> View Our Work</a>
+        </div>
+        <div class="flex items-center gap-6 pt-8 border-t border-white/15">
+          <div class="flex -space-x-3">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" class="w-10 h-10 rounded-full border-2 border-white/80 object-cover shadow-sm">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" class="w-10 h-10 rounded-full border-2 border-white/80 object-cover shadow-sm">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" class="w-10 h-10 rounded-full border-2 border-white/80 object-cover shadow-sm">
+            <div class="w-10 h-10 rounded-full border-2 border-white/80 text-white text-xs font-bold flex items-center justify-center shadow-sm" style="background:linear-gradient(135deg,#0D9488,#0EA5E9);">5K+</div>
+          </div>
+          <div>
+            <div class="text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="text-xs text-slate-300 mt-1">Rated 4.9 by 5000+ patients</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative" data-aos="fade-left">
+        <div class="absolute -inset-6 rounded-[2.5rem] opacity-40 rotate-3" style="background:linear-gradient(135deg,#5eead4,#0EA5E9);filter:blur(40px);"></div>
+        <div class="hero-img-wrap shadow-2xl ring-1 ring-white/20"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=900&q=80" alt="Modern Dental Clinic" class="w-full h-[500px] object-cover"></div>
+        <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl float z-10 border border-white/60">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,rgba(13,148,136,0.15),rgba(14,165,233,0.1));"><i class="fa-solid fa-shield-heart text-primary text-lg"></i></div>
+            <div><p class="font-bold text-slate-900 text-sm">100% Safe</p><p class="text-[11px] text-slate-500">Sterilized Equipment</p></div>
+          </div>
+        </div>
+        <div class="absolute top-6 -right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl float z-10 border border-white/60" style="animation-delay:1s">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,rgba(14,165,233,0.15),rgba(13,148,136,0.1));"><i class="fa-solid fa-award text-secondary text-lg"></i></div>
+            <div><p class="font-bold text-slate-900 text-sm">Certified</p><p class="text-[11px] text-slate-500">ADA Approved</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-16 bg-white border-y border-slate-100">
+    <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="text-center group" data-aos="fade-up"><div class="icon-glass w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4"><i class="fa-solid fa-user-doctor text-primary text-xl transition"></i></div><h3 class="font-serif text-base text-slate-900 mb-1">Expert Dentists</h3><p class="text-xs text-slate-500">Skilled & Certified</p></div>
+      <div class="text-center group" data-aos="fade-up" data-aos-delay="100"><div class="icon-glass w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4"><i class="fa-solid fa-microscope text-primary text-xl transition"></i></div><h3 class="font-serif text-base text-slate-900 mb-1">Modern Technology</h3><p class="text-xs text-slate-500">Latest Equipment</p></div>
+      <div class="text-center group" data-aos="fade-up" data-aos-delay="200"><div class="icon-glass w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4"><i class="fa-solid fa-heart-pulse text-primary text-xl transition"></i></div><h3 class="font-serif text-base text-slate-900 mb-1">Personalized Care</h3><p class="text-xs text-slate-500">Tailored for You</p></div>
+      <div class="text-center group" data-aos="fade-up" data-aos-delay="300"><div class="icon-glass w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4"><i class="fa-solid fa-couch text-primary text-xl transition"></i></div><h3 class="font-serif text-base text-slate-900 mb-1">Comfortable Space</h3><p class="text-xs text-slate-500">Relax & Feel at Ease</p></div>
+    </div>
+  </div>
+
+  <div class="py-24 bg-slate-50">
+    <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative" data-aos="fade-right">
+        <div class="hero-img-wrap shadow-xl"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" class="w-full h-[460px] object-cover"></div>
+        <div class="absolute -bottom-6 -right-6 text-white p-6 rounded-3xl shadow-2xl hidden md:block" style="background:linear-gradient(135deg,#0D9488,#0EA5E9);"><p class="text-3xl font-serif font-bold">10+</p><p class="text-teal-50 text-xs">Years of Excellence</p></div>
+      </div>
+      <div data-aos="fade-left">
+        <span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">About HybriDent</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 mb-6 text-slate-900">Your Trusted Partner in <em class="gradient-text not-italic">Modern Dental Care</em></h2>
+        <p class="text-slate-600 mb-6 leading-relaxed">At HybriDent, we combine advanced technology with compassionate care to deliver the best dental experience.</p>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-primary"></i><span class="text-slate-700 text-sm font-medium">Painless Procedures</span></div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-primary"></i><span class="text-slate-700 text-sm font-medium">Sterilized Equipment</span></div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-primary"></i><span class="text-slate-700 text-sm font-medium">Affordable Pricing</span></div>
+          <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-primary"></i><span class="text-slate-700 text-sm font-medium">24/7 Emergency Care</span></div>
+        </div>
+        <a href="#about" data-nav="about" class="btn-primary">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-14 max-w-2xl mx-auto" data-aos="fade-up">
+        <span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">Our Services</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Comprehensive Dental Care</h2>
+        <p class="text-slate-600 mt-4 text-sm">From routine checkups to advanced treatments, we cover everything.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-7 rounded-2xl glass-card group" data-aos="fade-up" data-aos-delay="100"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-tooth text-primary text-lg transition"></i></div><h3 class="text-base font-serif text-slate-900 mb-2">General Dentistry</h3><p class="text-xs text-slate-500 mb-4 leading-relaxed">Routine care for lasting smiles.</p><a href="#services" data-nav="services" class="text-primary text-xs font-semibold">Learn More →</a></div>
+        <div class="p-7 rounded-2xl glass-card group" data-aos="fade-up" data-aos-delay="150"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-wand-magic-sparkles text-primary text-lg transition"></i></div><h3 class="text-base font-serif text-slate-900 mb-2">Cosmetic Dentistry</h3><p class="text-xs text-slate-500 mb-4 leading-relaxed">Enhance your natural beauty.</p><a href="#services" data-nav="services" class="text-primary text-xs font-semibold">Learn More →</a></div>
+        <div class="p-7 rounded-2xl glass-card group" data-aos="fade-up" data-aos-delay="200"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-teeth-open text-primary text-lg transition"></i></div><h3 class="text-base font-serif text-slate-900 mb-2">Orthodontics</h3><p class="text-xs text-slate-500 mb-4 leading-relaxed">Straighten your smile.</p><a href="#services" data-nav="services" class="text-primary text-xs font-semibold">Learn More →</a></div>
+        <div class="p-7 rounded-2xl glass-card group" data-aos="fade-up" data-aos-delay="250"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-screwdriver-wrench text-primary text-lg transition"></i></div><h3 class="text-base font-serif text-slate-900 mb-2">Dental Implants</h3><p class="text-xs text-slate-500 mb-4 leading-relaxed">Permanent & natural looking.</p><a href="#services" data-nav="services" class="text-primary text-xs font-semibold">Learn More →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-20 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0F172A 0%,#0D9488 100%);">
+    <div class="absolute inset-0 opacity-10"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" class="w-full h-full object-cover"></div>
+    <div class="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 text-center">
+      <div data-aos="fade-up"><p class="text-3xl md:text-4xl font-serif font-bold mb-2" style="color:#5eead4;">10+</p><p class="text-slate-200 text-xs">Years Experience</p></div>
+      <div data-aos="fade-up" data-aos-delay="100"><p class="text-3xl md:text-4xl font-serif font-bold mb-2" style="color:#5eead4;">5K+</p><p class="text-slate-200 text-xs">Happy Patients</p></div>
+      <div data-aos="fade-up" data-aos-delay="200"><p class="text-3xl md:text-4xl font-serif font-bold mb-2" style="color:#5eead4;">98%</p><p class="text-slate-200 text-xs">Success Rate</p></div>
+      <div data-aos="fade-up" data-aos-delay="300"><p class="text-3xl md:text-4xl font-serif font-bold mb-2" style="color:#5eead4;">15+</p><p class="text-slate-200 text-xs">Specialists</p></div>
+    </div>
+  </div>
+
+  <div class="py-24 bg-slate-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-14 max-w-2xl mx-auto" data-aos="fade-up">
+        <span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">Testimonials</span>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">What Our Patients Say</h2>
+      </div>
+      <div class="testimonial-slider max-w-3xl mx-auto" data-aos="fade-up">
+        <div class="px-4"><div class="glass-card p-10 md:p-12 rounded-3xl text-center"><i class="fa-solid fa-quote-left text-primary text-2xl mb-6"></i><p class="text-base md:text-lg text-slate-700 italic mb-8 leading-relaxed">"I was always scared of dentists, but the team at HybriDent made me feel so comfortable. The painless procedure was amazing!"</p><div class="flex items-center justify-center gap-4"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" class="w-12 h-12 rounded-full object-cover"><div class="text-left"><h4 class="font-serif font-bold text-slate-900 text-sm">Sarah Johnson</h4><p class="text-xs text-slate-500">Cosmetic Patient</p></div></div></div></div>
+        <div class="px-4"><div class="glass-card p-10 md:p-12 rounded-3xl text-center"><i class="fa-solid fa-quote-left text-primary text-2xl mb-6"></i><p class="text-base md:text-lg text-slate-700 italic mb-8 leading-relaxed">"The technology they use is top-notch. My dental implants look completely natural. Highly recommended!"</p><div class="flex items-center justify-center gap-4"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" class="w-12 h-12 rounded-full object-cover"><div class="text-left"><h4 class="font-serif font-bold text-slate-900 text-sm">Michael Chen</h4><p class="text-xs text-slate-500">Implant Patient</p></div></div></div></div>
+        <div class="px-4"><div class="glass-card p-10 md:p-12 rounded-3xl text-center"><i class="fa-solid fa-quote-left text-primary text-2xl mb-6"></i><p class="text-base md:text-lg text-slate-700 italic mb-8 leading-relaxed">"My kids actually look forward to their dental visits now! The staff is incredibly friendly with children."</p><div class="flex items-center justify-center gap-4"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" class="w-12 h-12 rounded-full object-cover"><div class="text-left"><h4 class="font-serif font-bold text-slate-900 text-sm">Emily Davis</h4><p class="text-xs text-slate-500">Family Patient</p></div></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-20 relative overflow-hidden" style="background:linear-gradient(135deg,#0D9488 0%,#0EA5E9 100%);">
+    <div class="container mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-serif text-white mb-4">Ready to Transform Your Smile?</h2>
+      <p class="text-teal-50 mb-8 max-w-xl mx-auto text-sm">Book your appointment today and take the first step toward a healthier, more confident smile.</p>
+      <a href="#contact" data-nav="contact" class="btn-primary" style="background:#fff;color:#0D9488;">Book Appointment <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="page-about" class="page">
+  <div class="page-banner"><div class="banner-bg" style="background-image:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80');"></div><div class="container mx-auto px-6 text-center relative z-10"><h1 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-3">About HybriDent</h1><p class="text-teal-100 text-xs"><a href="#home" data-nav="home" class="hover:text-white transition">Home</a> <span class="mx-2 opacity-60">/</span> About</p></div></div>
+  <div class="py-24 bg-white"><div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <div data-aos="fade-right"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">Our Story</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 mb-6 text-slate-900">Redefining Dental Care Since 2014</h2><p class="text-slate-600 mb-5 leading-relaxed text-sm">HybriDent was founded with a single mission: to make world-class dental care accessible, comfortable, and technology-driven. What started as a small clinic has grown into one of the most trusted dental practices.</p><p class="text-slate-600 mb-8 leading-relaxed text-sm">We believe that every patient deserves a personalized experience. That's why we invest in the latest dental technology, continuous training for our team, and a warm, welcoming environment.</p><div class="grid grid-cols-2 gap-6"><div><p class="text-2xl md:text-3xl font-serif text-primary mb-1">5,000+</p><p class="text-xs text-slate-500">Happy Patients</p></div><div><p class="text-2xl md:text-3xl font-serif text-primary mb-1">15+</p><p class="text-xs text-slate-500">Specialists</p></div></div></div>
+    <div class="grid grid-cols-2 gap-4" data-aos="fade-left"><div class="hero-img-wrap shadow-lg"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80" class="h-64 w-full object-cover"></div><div class="hero-img-wrap shadow-lg mt-8"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&q=80" class="h-64 w-full object-cover"></div></div>
+  </div></div>
+  <div class="py-24 bg-slate-50"><div class="container mx-auto px-6">
+    <div class="text-center mb-14 max-w-2xl mx-auto" data-aos="fade-up"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">Our Values</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Mission & Vision</h2></div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass-card p-7 rounded-2xl group" data-aos="fade-up"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-bullseye text-primary text-lg transition"></i></div><h3 class="font-serif text-lg text-slate-900 mb-2">Our Mission</h3><p class="text-slate-500 text-xs leading-relaxed">To provide exceptional dental care using innovative technology while ensuring every patient feels comfortable and valued.</p></div>
+      <div class="glass-card p-7 rounded-2xl group" data-aos="fade-up" data-aos-delay="100"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-eye text-primary text-lg transition"></i></div><h3 class="font-serif text-lg text-slate-900 mb-2">Our Vision</h3><p class="text-slate-500 text-xs leading-relaxed">To become the most trusted dental care provider, known for excellence, integrity, and patient-first care.</p></div>
+      <div class="glass-card p-7 rounded-2xl group" data-aos="fade-up" data-aos-delay="200"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-hand-holding-heart text-primary text-lg transition"></i></div><h3 class="font-serif text-lg text-slate-900 mb-2">Our Values</h3><p class="text-slate-500 text-xs leading-relaxed">Compassion, innovation, transparency, and unwavering commitment to patient satisfaction drive everything we do.</p></div>
+    </div>
+  </div></div>
+  <div class="py-24 bg-white"><div class="container mx-auto px-6">
+    <div class="text-center mb-14 max-w-2xl mx-auto" data-aos="fade-up"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">Our Team</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Meet Our Expert Dentists</h2></div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center card-hover rounded-2xl overflow-hidden" data-aos="fade-up"><div class="hero-img-wrap shadow-lg"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80" class="w-full h-72 object-cover"></div><div class="pt-4 pb-2"><h3 class="font-serif text-base text-slate-900">Dr. Sarah Mitchell</h3><p class="text-primary text-xs">Cosmetic Dentist</p></div></div>
+      <div class="text-center card-hover rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100"><div class="hero-img-wrap shadow-lg"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80" class="w-full h-72 object-cover"></div><div class="pt-4 pb-2"><h3 class="font-serif text-base text-slate-900">Dr. James Carter</h3><p class="text-primary text-xs">Orthodontist</p></div></div>
+      <div class="text-center card-hover rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200"><div class="hero-img-wrap shadow-lg"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=80" class="w-full h-72 object-cover"></div><div class="pt-4 pb-2"><h3 class="font-serif text-base text-slate-900">Dr. Emily Roberts</h3><p class="text-primary text-xs">Implant Specialist</p></div></div>
+      <div class="text-center card-hover rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300"><div class="hero-img-wrap shadow-lg"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=80" class="w-full h-72 object-cover"></div><div class="pt-4 pb-2"><h3 class="font-serif text-base text-slate-900">Dr. Michael Lee</h3><p class="text-primary text-xs">General Dentist</p></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section id="page-services" class="page">
+  <div class="page-banner"><div class="banner-bg" style="background-image:url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1920&q=80');"></div><div class="container mx-auto px-6 text-center relative z-10"><h1 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-3">Our Services</h1><p class="text-teal-100 text-xs"><a href="#home" data-nav="home" class="hover:text-white transition">Home</a> <span class="mx-2 opacity-60">/</span> Services</p></div></div>
+  <div class="py-24 bg-white"><div class="container mx-auto px-6">
+    <div class="text-center mb-14 max-w-2xl mx-auto" data-aos="fade-up"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">What We Offer</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Comprehensive Dental Services</h2></div>
+    <div class="space-y-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center"><div data-aos="fade-right"><div class="hero-img-wrap shadow-xl"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" class="w-full h-96 object-cover"></div></div><div data-aos="fade-left"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-tooth text-primary text-lg"></i></div><h3 class="text-xl md:text-2xl font-serif text-slate-900 mb-4">General Dentistry</h3><p class="text-slate-600 mb-6 leading-relaxed text-sm">Comprehensive dental care including routine checkups, professional cleanings, fillings, and preventive treatments.</p><ul class="grid grid-cols-2 gap-3 mb-8"><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Routine Checkups</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Deep Cleaning</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Cavity Fillings</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Root Canals</li></ul><a href="#contact" data-nav="contact" class="btn-primary">Book This Service <i class="fa-solid fa-arrow-right text-xs"></i></a></div></div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center"><div class="lg:order-2" data-aos="fade-left"><div class="hero-img-wrap shadow-xl"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&q=80" class="w-full h-96 object-cover"></div></div><div class="lg:order-1" data-aos="fade-right"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-wand-magic-sparkles text-primary text-lg"></i></div><h3 class="text-xl md:text-2xl font-serif text-slate-900 mb-4">Cosmetic Dentistry</h3><p class="text-slate-600 mb-6 leading-relaxed text-sm">Transform your smile with premium cosmetic services. From teeth whitening to porcelain veneers.</p><ul class="grid grid-cols-2 gap-3 mb-8"><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Teeth Whitening</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Porcelain Veneers</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Smile Makeover</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Bonding</li></ul><a href="#contact" data-nav="contact" class="btn-primary">Book This Service <i class="fa-solid fa-arrow-right text-xs"></i></a></div></div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center"><div data-aos="fade-right"><div class="hero-img-wrap shadow-xl"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80" class="w-full h-96 object-cover"></div></div><div data-aos="fade-left"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-teeth-open text-primary text-lg"></i></div><h3 class="text-xl md:text-2xl font-serif text-slate-900 mb-4">Orthodontics</h3><p class="text-slate-600 mb-6 leading-relaxed text-sm">Straighten your teeth discreetly with modern orthodontic solutions — braces or clear aligners.</p><ul class="grid grid-cols-2 gap-3 mb-8"><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Clear Aligners</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Metal Braces</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Ceramic Braces</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Retainers</li></ul><a href="#contact" data-nav="contact" class="btn-primary">Book This Service <i class="fa-solid fa-arrow-right text-xs"></i></a></div></div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center"><div class="lg:order-2" data-aos="fade-left"><div class="hero-img-wrap shadow-xl"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" class="w-full h-96 object-cover"></div></div><div class="lg:order-1" data-aos="fade-right"><div class="icon-glass w-12 h-12 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-screwdriver-wrench text-primary text-lg"></i></div><h3 class="text-xl md:text-2xl font-serif text-slate-900 mb-4">Dental Implants</h3><p class="text-slate-600 mb-6 leading-relaxed text-sm">Permanent, natural-looking tooth replacements that restore full function and aesthetics.</p><ul class="grid grid-cols-2 gap-3 mb-8"><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Single Implants</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Full Arch Implants</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Implant Crowns</li><li class="flex items-center gap-2 text-xs text-slate-700"><i class="fa-solid fa-check text-primary"></i>Bone Grafting</li></ul><a href="#contact" data-nav="contact" class="btn-primary">Book This Service <i class="fa-solid fa-arrow-right text-xs"></i></a></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ==================== GALLERY ==================== -->
+<section id="page-gallery" class="page">
+  <div class="page-banner"><div class="banner-bg" style="background-image:url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1920&q=80');"></div><div class="container mx-auto px-6 text-center relative z-10"><h1 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-3">Our Gallery</h1><p class="text-teal-100 text-xs"><a href="#home" data-nav="home" class="hover:text-white transition">Home</a> <span class="mx-2 opacity-60">/</span> Gallery</p></div></div>
+  <div class="py-24 bg-white"><div class="container mx-auto px-6">
+    <div class="text-center mb-12 max-w-2xl mx-auto" data-aos="fade-up"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">Real Smiles</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Real Results, Real Patients</h2></div>
+    <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
+      <button data-filter="all" class="active-filter px-5 py-2 rounded-full border border-slate-200 font-medium text-xs bg-white">All</button>
+      <button data-filter="clinic" class="px-5 py-2 rounded-full border border-slate-200 font-medium text-xs bg-white hover:border-primary transition">Our Clinic</button>
+      <button data-filter="treatment" class="px-5 py-2 rounded-full border border-slate-200 font-medium text-xs bg-white hover:border-primary transition">Treatments</button>
+      <button data-filter="results" class="px-5 py-2 rounded-full border border-slate-200 font-medium text-xs bg-white hover:border-primary transition">Smile Results</button>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-aos="fade-up">
+      <div data-cat="clinic" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80"></div>
+      <div data-cat="treatment" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80"></div>
+      <div data-cat="results" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80"></div>
+      <div data-cat="clinic" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80"></div>
+      <div data-cat="treatment" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1606265752439-1f18c2e9e2a2?w=600&q=80"></div>
+      <div data-cat="results" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80"></div>
+      <div data-cat="clinic" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80"></div>
+      <div data-cat="treatment" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80"></div>
+      <div data-cat="results" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80"></div>
+      <div data-cat="clinic" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80"></div>
+      <div data-cat="treatment" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1606265752439-1f18c2e9e2a2?w=600&q=80"></div>
+      <div data-cat="results" class="gallery-item h-56"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80"></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ==================== PRICING ==================== -->
+<section id="page-pricing" class="page">
+  <div class="page-banner"><div class="banner-bg" style="background-image:url('https://images.unsplash.com/photo-1606265752439-1f18c2e9e2a2?w=1920&q=80');"></div><div class="container mx-auto px-6 text-center relative z-10"><h1 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-3">Transparent Pricing</h1><p class="text-teal-100 text-xs"><a href="#home" data-nav="home" class="hover:text-white transition">Home</a> <span class="mx-2 opacity-60">/</span> Pricing</p></div></div>
+  <div class="py-24 bg-white"><div class="container mx-auto px-6">
+    <div class="text-center mb-14 max-w-2xl mx-auto" data-aos="fade-up"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">Pricing Plans</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Choose the Plan for Your Smile</h2><p class="text-slate-600 mt-4 text-sm">No hidden fees. No surprises. Just quality care at fair prices.</p></div>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="glass-card rounded-3xl p-7 card-hover" data-aos="fade-up"><h3 class="font-serif text-xl text-slate-900 mb-2">Basic Care</h3><p class="text-xs text-slate-500 mb-6">Essential dental checkups</p><div class="mb-6"><span class="text-4xl font-serif font-bold text-slate-900">₹999</span><span class="text-slate-500 text-sm">/visit</span></div><ul class="space-y-3 mb-8 text-xs text-slate-600"><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Routine Checkup</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Professional Cleaning</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Basic Consultation</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Oral Health Report</li></ul><a href="#contact" data-nav="contact" class="btn-outline w-full">Get Started</a></div>
+      <div class="rounded-3xl p-7 shadow-2xl md:-translate-y-4 relative text-white" style="background:linear-gradient(135deg,#0D9488 0%,#0EA5E9 100%);" data-aos="fade-up" data-aos-delay="100"><span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</span><h3 class="font-serif text-xl mb-2 mt-4">Premium Care</h3><p class="text-xs text-teal-50 mb-6">Comprehensive dental care</p><div class="mb-6"><span class="text-4xl font-serif font-bold">₹1,999</span><span class="text-teal-100 text-sm">/visit</span></div><ul class="space-y-3 mb-8 text-xs text-teal-50"><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>All Basic Services</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>Digital X-Ray</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>Fluoride Treatment</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>Priority Support</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>Free Follow-up</li></ul><a href="#contact" data-nav="contact" class="block text-center bg-white text-primary py-3 rounded-full font-bold text-sm hover:bg-slate-100 transition shadow-lg">Get Started</a></div>
+      <div class="glass-card rounded-3xl p-7 card-hover" data-aos="fade-up" data-aos-delay="200"><h3 class="font-serif text-xl text-slate-900 mb-2">Complete Care</h3><p class="text-xs text-slate-500 mb-6">Full dental restoration</p><div class="mb-6"><span class="text-4xl font-serif font-bold text-slate-900">₹2,999</span><span class="text-slate-500 text-sm">/visit</span></div><ul class="space-y-3 mb-8 text-xs text-slate-600"><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>All Premium Services</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Cosmetic Consultation</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Advanced Imaging</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Dedicated Specialist</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>24/7 Emergency Line</li></ul><a href="#contact" data-nav="contact" class="btn-outline w-full">Get Started</a></div>
+    </div>
+  </div></div>
+  <div class="py-24 bg-slate-50"><div class="container mx-auto px-6 max-w-3xl">
+    <div class="text-center mb-14" data-aos="fade-up"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">FAQ</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Frequently Asked Questions</h2></div>
+    <div class="space-y-4">
+      <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition" data-aos="fade-up"><div class="flex justify-between items-center p-6 faq-question"><h3 class="font-serif text-base text-slate-900">Is dental treatment painful?</h3><i class="fa-solid fa-chevron-down text-primary faq-icon"></i></div><div class="faq-answer px-6 text-slate-600 text-sm pb-6 leading-relaxed">At HybriDent, we use advanced painless techniques and local anesthesia to ensure you feel no discomfort during any procedure.</div></div>
+      <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="80"><div class="flex justify-between items-center p-6 faq-question"><h3 class="font-serif text-base text-slate-900">How often should I visit the dentist?</h3><i class="fa-solid fa-chevron-down text-primary faq-icon"></i></div><div class="faq-answer px-6 text-slate-600 text-sm pb-6 leading-relaxed">We recommend a checkup and cleaning every 6 months. However, our doctors might suggest more frequent visits based on your dental condition.</div></div>
+      <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="160"><div class="flex justify-between items-center p-6 faq-question"><h3 class="font-serif text-base text-slate-900">Do you offer emergency dental services?</h3><i class="fa-solid fa-chevron-down text-primary faq-icon"></i></div><div class="faq-answer px-6 text-slate-600 text-sm pb-6 leading-relaxed">Yes, we provide 24/7 emergency dental care. Call us immediately for severe toothaches, broken teeth, or other dental emergencies.</div></div>
+      <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="240"><div class="flex justify-between items-center p-6 faq-question"><h3 class="font-serif text-base text-slate-900">Do you accept insurance?</h3><i class="fa-solid fa-chevron-down text-primary faq-icon"></i></div><div class="faq-answer px-6 text-slate-600 text-sm pb-6 leading-relaxed">Yes, we accept most major dental insurance plans. Contact our front desk to verify your coverage and benefits.</div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="page-contact" class="page">
+  <div class="page-banner"><div class="banner-bg" style="background-image:url('https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1920&q=80');"></div><div class="container mx-auto px-6 text-center relative z-10"><h1 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-3">Get in Touch</h1><p class="text-teal-100 text-xs"><a href="#home" data-nav="home" class="hover:text-white transition">Home</a> <span class="mx-2 opacity-60">/</span> Contact</p></div></div>
+  <div class="py-16 bg-white"><div class="container mx-auto px-6 grid md:grid-cols-3 gap-6">
+    <div class="text-center p-7 rounded-2xl glass-card group" data-aos="fade-up"><div class="icon-glass w-12 h-12 mx-auto rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-location-dot text-primary text-lg transition"></i></div><h3 class="font-serif text-base mb-2">Visit Us</h3><p class="text-xs text-slate-500 leading-relaxed">123 Dental Care Ave<br>New York, NY 10001</p></div>
+    <div class="text-center p-7 rounded-2xl glass-card group" data-aos="fade-up" data-aos-delay="100"><div class="icon-glass w-12 h-12 mx-auto rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-phone text-primary text-lg transition"></i></div><h3 class="font-serif text-base mb-2">Call Us</h3><p class="text-xs text-slate-500 leading-relaxed"><a href="tel:+919887420145" class="hover:text-primary transition">+91 98874 20145</a><br>Mon–Sat: 9AM – 7PM</p></div>
+    <div class="text-center p-7 rounded-2xl glass-card group" data-aos="fade-up" data-aos-delay="200"><div class="icon-glass w-12 h-12 mx-auto rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-envelope text-primary text-lg transition"></i></div><h3 class="font-serif text-base mb-2">Email Us</h3><p class="text-xs text-slate-500 leading-relaxed"><a href="mailto:hello@hybriddent.com" class="hover:text-primary">hello@hybriddent.com</a><br><a href="mailto:support@hybriddent.com" class="hover:text-primary">support@hybriddent.com</a></p></div>
+  </div></div>
+  <div class="py-16 bg-slate-50"><div class="container mx-auto px-6">
+    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden grid lg:grid-cols-2 border border-slate-100" data-aos="fade-up">
+      <div class="p-8 md:p-10">
+        <h2 class="text-2xl md:text-3xl font-serif text-slate-900 mb-3">Book Your Appointment</h2>
+        <p class="text-slate-600 mb-8 text-xs">Fill in the form — your details will be sent directly to our WhatsApp. We confirm within minutes.</p>
+        <form id="bookingForm" class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="text" id="fName" placeholder="Full Name *" class="form-input" required>
+            <input type="email" id="fEmail" placeholder="Email Address *" class="form-input" required>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="tel" id="fPhone" placeholder="Phone Number *" class="form-input" required>
+            <select id="fService" class="form-input text-slate-500" required>
+              <option value="">Choose Service</option>
+              <option>General Dentistry</option>
+              <option>Cosmetic Dentistry</option>
+              <option>Orthodontics</option>
+              <option>Dental Implants</option>
+              <option>Teeth Whitening</option>
+            </select>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="date" id="fDate" class="form-input text-slate-500" required>
+            <select id="fTime" class="form-input text-slate-500">
+              <option value="Flexible">Preferred Time</option>
+              <option>9:00 AM – 12:00 PM</option>
+              <option>12:00 PM – 3:00 PM</option>
+              <option>3:00 PM – 7:00 PM</option>
+            </select>
+          </div>
+          <textarea id="fMsg" placeholder="Message (Optional)" rows="3" class="form-input"></textarea>
+          <button type="submit" id="submitBtn" class="btn-primary w-full" style="padding:16px;">
+            <i class="fa-brands fa-whatsapp text-base"></i>Book via WhatsApp
+          </button>
+          <p class="text-[11px] text-slate-400 text-center">🔒 Submitting opens WhatsApp with your details pre-filled. Call <a href="tel:+919887420145" class="text-primary font-semibold">+91 98874 20145</a> for urgent needs.</p>
+        </form>
+      </div>
+      <div class="h-[500px] lg:h-auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.14!2d-73.98784!3d40.75797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1620000000000" width="100%" height="100%" style="border:0;min-height:500px" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="text-slate-400 pt-20 pb-8" style="background:linear-gradient(180deg,#0F172A 0%,#0b1220 100%);">
+  <div class="container mx-auto px-6 grid md:grid-cols-4 gap-10 mb-14">
+    <div>
+      <div class="flex items-center gap-2 mb-5"><span style="display:inline-flex;width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#0D9488,#0EA5E9);align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(13,148,136,0.4);"><i class="fa-solid fa-tooth" style="color:#fff;font-size:16px;"></i></span><span class="text-xl font-serif font-bold text-white">HybriDent</span></div>
+      <p class="text-xs leading-relaxed mb-6">Advanced technology for a healthier, brighter smile. Trusted by thousands of patients.</p>
+      <div class="flex gap-3">
+        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition"><i class="fa-brands fa-twitter text-sm"></i></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+      </div>
+    </div>
+    <div><h4 class="font-serif text-base text-white mb-5">Quick Links</h4><ul class="space-y-3 text-xs"><li><a href="#about" data-nav="about" class="hover:text-primary transition">About Us</a></li><li><a href="#services" data-nav="services" class="hover:text-primary transition">Services</a></li><li><a href="#gallery" data-nav="gallery" class="hover:text-primary transition">Gallery</a></li><li><a href="#pricing" data-nav="pricing" class="hover:text-primary transition">Pricing</a></li><li><a href="#contact" data-nav="contact" class="hover:text-primary transition">Contact</a></li></ul></div>
+    <div><h4 class="font-serif text-base text-white mb-5">Contact</h4><ul class="space-y-3 text-xs">
+      <li class="flex gap-3"><i class="fa-solid fa-location-dot text-primary mt-0.5"></i> 123 Dental Ave, New York, NY 10001</li>
+      <li class="flex gap-3"><i class="fa-solid fa-phone text-primary"></i> <a href="tel:+919887420145" class="hover:text-primary">+91 98874 20145</a></li>
+      <li class="flex gap-3"><i class="fa-brands fa-whatsapp text-primary"></i> <a href="https://wa.me/919887420145" target="_blank" class="hover:text-primary">WhatsApp: +91 98874 20145</a></li>
+      <li class="flex gap-3"><i class="fa-solid fa-envelope text-primary"></i> hello@hybriddent.com</li>
+      <li class="flex gap-3"><i class="fa-solid fa-clock text-primary"></i> Mon–Sat: 9AM – 7PM</li>
+    </ul></div>
+    <div><h4 class="font-serif text-base text-white mb-5">Newsletter</h4><p class="text-xs mb-4">Get dental tips and exclusive offers.</p><form onsubmit="event.preventDefault();showToast('Subscribed!','You will receive dental tips and offers soon.','success');this.reset();"><div class="flex"><input type="email" placeholder="Your email" class="w-full px-3 py-2.5 rounded-l-xl bg-white/5 border border-white/10 focus:outline-none focus:border-primary text-xs text-white" required><button class="px-3 py-2.5 rounded-r-xl text-white transition" style="background:linear-gradient(135deg,#0D9488,#0EA5E9);"><i class="fa-solid fa-paper-plane text-xs"></i></button></div></form></div>
+  </div>
+  <div class="border-t border-white/10 pt-6 text-center text-[11px]">&copy; 2024 HybriDent. All rights reserved.</div>
+</footer>
+
+<!-- ==================== FLOATING STACK (Right Side) ==================== -->
+<div class="floating-stack" id="floatingStack">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919887420145" target="_blank" class="float-btn whatsapp-btn" data-tip="Chat on WhatsApp" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <!-- Call -->
+  <a href="tel:+919887420145" class="float-btn" data-tip="Call +91 98874 20145" aria-label="Call">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+  <!-- Back to Top -->
+  <button id="backToTop" class="float-btn hidden-btn" data-tip="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</div>
+
+<!-- ==================== CHAT TOGGLE (Bottom Right - Robot) ==================== -->
+<button id="chatToggle" aria-label="Open AI Chat">
+  <i class="fa-solid fa-robot"></i>
+  <span class="dot"></span>
+</button>
+
+<!-- ==================== CHAT WINDOW ==================== -->
+<div id="chatWindow">
+  <div class="chat-header">
+    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+    <div class="flex-1"><p class="font-bold text-sm" style="font-family:'Outfit',sans-serif;">HybriDent AI</p><p class="text-[11px] opacity-90 flex items-center gap-1.5"><span style="width:7px;height:7px;background:#4ade80;border-radius:50%;display:inline-block;" id="statusDot"></span> <span id="statusText">Powered by Gemini</span></p></div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-suggestions" id="chatSuggestions">
+    <button data-q="What are your prices?">Pricing</button>
+    <button data-q="What are your opening hours?">Hours</button>
+    <button data-q="How do I book an appointment?">Book</button>
+    <button data-q="Do you offer emergency dental care?">Emergency</button>
+  </div>
+  <div class="chat-input-wrap">
+    <input type="text" id="chatInput" placeholder="Ask me anything...">
+    <button id="chatSend"><i class="fa-solid fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+/* ================= CONFIG ================= */
+const WHATSAPP_NUMBER = '919887420145';
+const CONTACT_PHONE = '+91 98874 20145';
+const GEMINI_MODEL = 'gemini-2.0-flash-lite';
+
+/* ================= TOAST ================= */
+function showToast(title, msg, type = 'success'){
+  const t = document.getElementById('toast');
+  document.getElementById('toastTitle').textContent = title;
+  document.getElementById('toastMsg').textContent = msg;
+  const icon = t.querySelector('.toast-icon');
+  if (type === 'error'){
+    icon.style.background = 'linear-gradient(135deg,#ef4444,#f97316)';
+    icon.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  } else {
+    icon.style.background = 'linear-gradient(135deg,#0D9488,#0EA5E9)';
+    icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+  }
+  t.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => t.classList.remove('show'), 5000);
+}
+
+/* ================= PAGE ROUTER ================= */
+const pages = ['home','about','services','gallery','pricing','contact'];
+function showPage(name){
+  if (!pages.includes(name)) name = 'home';
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name)?.classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(el => el.classList.toggle('active', el.dataset.nav === name));
+  document.getElementById('mobile-menu')?.classList.add('hidden');
+  window.scrollTo({top:0, behavior:'instant'});
+  if (window.AOS) setTimeout(() => AOS.refreshHard(), 100);
+  if (name === 'home') initSliders();
+}
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('[data-nav]');
+  if (link){
+    e.preventDefault();
+    const name = link.dataset.nav;
+    history.pushState(null, '', '#' + name);
+    showPage(name);
+  }
+});
+window.addEventListener('popstate', () => showPage(location.hash.replace('#','') || 'home'));
+
+/* ================= SLICK ================= */
+function initSliders(){
+  const $ = window.jQuery;
+  if (!$) return;
+  if ($('.testimonial-slider').length && !$('.testimonial-slider').hasClass('slick-initialized')){
+    $('.testimonial-slider').slick({dots:true, infinite:true, speed:600, slidesToShow:1, slidesToScroll:1, autoplay:true, autoplaySpeed:5000, fade:true, cssEase:'linear', arrows:false});
+  }
+}
+
+/* ================= PRELOADER ================= */
+window.addEventListener('load', () => {
+  document.getElementById('preloader') && setTimeout(() => document.getElementById('preloader').classList.add('hidden'), 500);
+});
+AOS.init({ duration:800, once:true, offset:80 });
+
+/* ================= MOBILE MENU ================= */
+document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+  document.getElementById('mobile-menu')?.classList.toggle('hidden');
+});
+
+/* ================= SCROLL ================= */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 30) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+  const btt = document.getElementById('backToTop');
+  if (window.scrollY > 400) btt.classList.remove('hidden-btn');
+  else btt.classList.add('hidden-btn');
+});
+document.getElementById('backToTop')?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ================= FAQ ================= */
+document.addEventListener('click', (e) => {
+  const q = e.target.closest('.faq-question');
+  if (q) q.parentElement.classList.toggle('active');
+});
+
+/* ================= GALLERY FILTER ================= */
+document.addEventListener('click', (e) => {
+  const tab = e.target.closest('[data-filter]');
+  if (!tab) return;
+  document.querySelectorAll('[data-filter]').forEach(t => t.classList.remove('active-filter'));
+  tab.classList.add('active-filter');
+  const filter = tab.dataset.filter;
+  document.querySelectorAll('[data-cat]').forEach(item => {
+    item.style.display = (filter === 'all' || item.dataset.cat === filter) ? '' : 'none';
+  });
+});
+
+/* ================= BOOKING FORM → WhatsApp ================= */
+document.getElementById('bookingForm')?.addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('fName').value.trim();
+  const email = document.getElementById('fEmail').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const service = document.getElementById('fService').value;
+  const date = document.getElementById('fDate').value;
+  const time = document.getElementById('fTime').value;
+  const msg = document.getElementById('fMsg').value.trim();
+
+  if (!name || !email || !phone || !service || !date){
+    showToast('Missing Info', 'Please fill all required fields marked with *', 'error');
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>Sending...';
+  btn.disabled = true;
+
+  const waMessage =
+`🦷 *New Appointment — HybriDent*
+
+👤 *Name:* ${name}
+📧 *Email:* ${email}
+📱 *Phone:* ${phone}
+💼 *Service:* ${service}
+📅 *Date:* ${date}
+⏰ *Time:* ${time}
+${msg ? '💬 *Message:* ' + msg : ''}
+
+_Sent from HybriDent website_`;
+
+  const waURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fa-solid fa-check"></i>Sent Successfully!';
+    showToast('✅ Request Sent!', `Thank you ${name}! Your appointment request has been sent to WhatsApp. We'll confirm shortly.`);
+    setTimeout(() => {
+      window.open(waURL, '_blank');
+      document.getElementById('bookingForm').reset();
+      btn.innerHTML = orig;
+      btn.disabled = false;
+    }, 900);
+  }, 1200);
+});
+
+/* ================= AI CHATBOT (Gemini) ================= */
+(function(){
+  const API_KEY_STORAGE = 'hybriddent_gemini_key';
+  const toggle = document.getElementById('chatToggle');
+  const win = document.getElementById('chatWindow');
+  const closeBtn = document.getElementById('chatClose');
+  const body = document.getElementById('chatBody');
+  const input = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('chatSend');
+  const suggestions = document.getElementById('chatSuggestions');
+  const statusDot = document.getElementById('statusDot');
+  const statusText = document.getElementById('statusText');
+  const floatingStack = document.getElementById('floatingStack');
+
+  let chatHistory = [];
+  let apiKey = localStorage.getItem(API_KEY_STORAGE);
+
+  toggle.addEventListener('click', () => {
+    win.classList.toggle('open');
+    if (win.classList.contains('open')){
+      floatingStack.classList.add('hidden-stack');
+      if (!apiKey) renderApiSetup();
+      else if (body.children.length === 0) renderWelcome();
+      setTimeout(() => input.focus(), 200);
+    } else {
+      floatingStack.classList.remove('hidden-stack');
+    }
+  });
+  closeBtn.addEventListener('click', () => {
+    win.classList.remove('open');
+    floatingStack.classList.remove('hidden-stack');
+  });
+
+  const SYSTEM_PROMPT = `You are a helpful, friendly AI assistant for HybriDent, a modern dental clinic.
+
+Key info:
+- Address: 123 Dental Care Ave, New York, NY 10001
+- Phone/WhatsApp: ${CONTACT_PHONE}
+- Hours: Mon–Sat 9AM–7PM, Sundays closed, 24/7 emergency available.
+- Services: General, Cosmetic, Orthodontics, Implants, Whitening, Root Canals, Veneers.
+- Pricing: Basic ₹999, Premium ₹1,999, Complete ₹2,999 per visit.
+- Insurance: Accepts most major plans.
+- Team: Dr. Sarah Mitchell, Dr. James Carter, Dr. Emily Roberts, Dr. Michael Lee.
+- Founded 2014, 5000+ patients, 98% success rate.
+
+Instructions:
+- Warm, professional, concise (2-4 sentences).
+- Use emojis occasionally (🦷 ✨ 😊).
+- For bookings, direct to Contact page or WhatsApp/call ${CONTACT_PHONE}.
+- Never make up info not listed.`;
+
+  function renderApiSetup(){
+    body.innerHTML = `
+      <div class="api-setup">
+        <div style="width:56px;height:56px;margin:0 auto;border-radius:16px;background:linear-gradient(135deg,#0D9488,#0EA5E9);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(13,148,136,0.35);">
+          <i class="fa-solid fa-key" style="color:#fff;font-size:22px;"></i>
+        </div>
+        <h4>Enable AI Chatbot</h4>
+        <p>Paste your free Google Gemini API key below. It's stored only on your device.</p>
+        <input type="password" id="apiKeyInput" placeholder="Paste your Gemini API key (AIza...)" value="${apiKey || ''}">
+        <button id="saveKeyBtn">Activate Chatbot</button>
+        <p class="help">Get a free key at <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a> — takes 30 seconds.</p>
+      </div>`;
+    document.getElementById('saveKeyBtn').addEventListener('click', () => {
+      const key = document.getElementById('apiKeyInput').value.trim();
+      if (!key || !key.startsWith('AIza')){
+        showToast('Invalid Key', 'Gemini API keys start with "AIza". Please check and try again.', 'error');
+        return;
+      }
+      apiKey = key;
+      localStorage.setItem(API_KEY_STORAGE, key);
+      statusText.textContent = 'Gemini AI Online';
+      renderWelcome();
+    });
+  }
+
+  function renderWelcome(){
+    body.innerHTML = '';
+    addMsg("👋 Hi! I'm HybriDent's AI assistant, powered by Google Gemini. Ask me anything about our services, pricing, hours, or booking an appointment!", 'bot');
+    if (apiKey){
+      statusDot.style.background = '#4ade80';
+      statusText.textContent = 'Gemini AI Online';
+    }
+  }
+
+  function addMsg(text, who){
+    const div = document.createElement('div');
+    div.className = 'msg ' + who;
+    div.textContent = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function showTyping(){
+    const t = document.createElement('div');
+    t.className = 'typing';
+    t.id = 'typingIndicator';
+    t.innerHTML = '<span></span><span></span><span></span>';
+    body.appendChild(t);
+    body.scrollTop = body.scrollHeight;
+  }
+  function removeTyping(){ document.getElementById('typingIndicator')?.remove(); }
+
+  async function askGemini(userText){
+    if (!apiKey){ renderApiSetup(); return; }
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+    chatHistory.push({ role: 'user', parts: [{ text: userText }] });
+    const payload = {
+      systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+      contents: chatHistory.slice(-12),
+      generationConfig: { temperature: 0.7, maxOutputTokens: 400, topP: 0.95 }
+    };
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok){
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error?.message || `HTTP ${res.status}`);
+      }
+      const data = await res.json();
+      const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response.";
+      chatHistory.push({ role: 'model', parts: [{ text: reply }] });
+      removeTyping();
+      addMsg(reply, 'bot');
+    } catch (err){
+      removeTyping();
+      const msg = err.message || 'Unknown error';
+      if (msg.includes('API_KEY') || msg.includes('API key') || msg.includes('401') || msg.includes('403')){
+        addMsg("🔑 Your API key seems invalid or expired. Please refresh and enter a valid Gemini API key.", 'error');
+        localStorage.removeItem(API_KEY_STORAGE);
+        apiKey = null;
+      } else if (msg.includes('quota') || msg.includes('429')){
+        addMsg("⏳ Too many requests. Please wait a minute and try again.", 'error');
+      } else {
+        addMsg("⚠️ Something went wrong: " + msg + ". Please try again or call " + CONTACT_PHONE + ".", 'error');
+      }
+    }
+  }
+
+  function handleSend(text){
+    if (!text.trim()) return;
+    if (!apiKey){ renderApiSetup(); return; }
+    addMsg(text, 'user');
+    input.value = '';
+    sendBtn.disabled = true;
+    showTyping();
+    askGemini(text).finally(() => { sendBtn.disabled = false; input.focus(); });
+  }
+
+  sendBtn.addEventListener('click', () => handleSend(input.value));
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter'){ e.preventDefault(); handleSend(input.value); } });
+  suggestions.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-q]');
+    if (btn) handleSend(btn.dataset.q);
+  });
+
+  if (apiKey) statusText.textContent = 'Gemini AI Online';
+})();
+
+/* ================= INITIAL ================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const initial = location.hash.replace('#','') || 'home';
+  showPage(initial);
+  initSliders();
+});
+</script>
+
+</body>
+</html>
