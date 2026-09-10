@@ -1,0 +1,56 @@
+{
+  "index.html": {
+    "bytes": 24050,
+    "has_main_css": true,
+    "has_main_js": true,
+    "has_jquery": false,
+    "has_slick": false,
+    "has_aos_cdn": false,
+    "has_local_favicon": true
+  },
+  "about.html": {
+    "bytes": 14997,
+    "has_main_css": true,
+    "has_main_js": true,
+    "has_jquery": false,
+    "has_slick": false,
+    "has_aos_cdn": false,
+    "has_local_favicon": true
+  },
+  "services.html": {
+    "bytes": 15275,
+    "has_main_css": true,
+    "has_main_js": true,
+    "has_jquery": false,
+    "has_slick": false,
+    "has_aos_cdn": false,
+    "has_local_favicon": true
+  },
+  "gallery.html": {
+    "bytes": 12429,
+    "has_main_css": true,
+    "has_main_js": true,
+    "has_jquery": false,
+    "has_slick": false,
+    "has_aos_cdn": false,
+    "has_local_favicon": true
+  },
+  "pricing.html": {
+    "bytes": 16206,
+    "has_main_css": true,
+    "has_main_js": true,
+    "has_jquery": false,
+    "has_slick": false,
+    "has_aos_cdn": false,
+    "has_local_favicon": true
+  },
+  "contact.html": {
+    "bytes": 13817,
+    "has_main_css": true,
+    "has_main_js": true,
+    "has_jquery": false,
+    "has_slick": false,
+    "has_aos_cdn": false,
+    "has_local_favicon": true
+  }
+}
