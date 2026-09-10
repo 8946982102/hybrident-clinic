@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dental Pricing — HybriDent</title>
+<meta name="description" content="Advanced dental technology meets personalized care. Book your appointment at HybriDent today.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0D9488',secondary:'#0EA5E9',dark:'#0F172A'},fontFamily:{sans:['Inter','system-ui','sans-serif'],serif:['Playfair Display','Georgia','serif'],display:['Outfit','system-ui','sans-serif']}}}};</script>
+</head>
+<body data-page="pricing">
+
+
+<!-- PRELOADER -->
+<div id="preloader"><div class="pre-ring"></div><img src="tooth-logo.svg" alt="HybriDent" style="width:34px;height:34px;position:relative;z-index:1;" loading="lazy" decoding="async"></div>
+
+<!-- TOAST -->
+<div id="toast">
+  <div class="toast-icon"><i class="fa-solid fa-check"></i></div>
+  <div><div class="toast-title" id="toastTitle">Success!</div><div class="toast-msg" id="toastMsg">Your message has been sent.</div></div>
+</div>
+
+<!-- NAVBAR -->
+<div class="nav-wrap" id="navbar">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-logo"><img src="tooth-logo.svg" alt="" loading="lazy" decoding="async"></span>
+      HybriDent
+    </a>
+    <div class="hidden lg:flex items-center gap-7">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="nav-cta hidden md:inline-block">Book Appointment</a>
+      <button id="mobile-menu-btn" class="lg:hidden" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" style="background:linear-gradient(135deg,#0D9488,#0EA5E9);color:#fff;text-align:center;margin-top:8px;">Book Appointment</a>
+  </div>
+</div>
+
+<section id="page-pricing">
+  <div class="page-banner"><div class="banner-bg" style="background-image:url('https://images.unsplash.com/photo-1606265752439-1f18c2e9e2a2?w=1920&q=80');"></div><div class="container mx-auto px-6 text-center relative z-10"><h1 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-3">Transparent Pricing</h1><p class="text-teal-100 text-xs"><a href="index.html" class="hover:text-white transition">Home</a> <span class="mx-2 opacity-60">/</span> Pricing</p></div></div>
+  <div class="py-24 bg-white"><div class="container mx-auto px-6">
+    <div class="text-center mb-14 max-w-2xl mx-auto" data-aos="fade-up"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">Pricing Plans</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Choose the Plan for Your Smile</h2><p class="text-slate-600 mt-4 text-sm">No hidden fees. No surprises. Just quality care at fair prices.</p></div>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="glass-card rounded-3xl p-7 card-hover" data-aos="fade-up"><h3 class="font-serif text-xl text-slate-900 mb-2">Basic Care</h3><p class="text-xs text-slate-500 mb-6">Essential dental checkups</p><div class="mb-6"><span class="text-4xl font-serif font-bold text-slate-900">₹999</span><span class="text-slate-500 text-sm">/visit</span></div><ul class="space-y-3 mb-8 text-xs text-slate-600"><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Routine Checkup</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Professional Cleaning</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Basic Consultation</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Oral Health Report</li></ul><a href="contact.html" class="btn-outline w-full">Get Started</a></div>
+      <div class="rounded-3xl p-7 shadow-2xl md:-translate-y-4 relative text-white" style="background:linear-gradient(135deg,#0D9488 0%,#0EA5E9 100%);" data-aos="fade-up" data-aos-delay="100"><span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</span><h3 class="font-serif text-xl mb-2 mt-4">Premium Care</h3><p class="text-xs text-teal-50 mb-6">Comprehensive dental care</p><div class="mb-6"><span class="text-4xl font-serif font-bold">₹1,999</span><span class="text-teal-100 text-sm">/visit</span></div><ul class="space-y-3 mb-8 text-xs text-teal-50"><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>All Basic Services</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>Digital X-Ray</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>Fluoride Treatment</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>Priority Support</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-white"></i>Free Follow-up</li></ul><a href="contact.html" class="block text-center bg-white text-primary py-3 rounded-full font-bold text-sm hover:bg-slate-100 transition shadow-lg">Get Started</a></div>
+      <div class="glass-card rounded-3xl p-7 card-hover" data-aos="fade-up" data-aos-delay="200"><h3 class="font-serif text-xl text-slate-900 mb-2">Complete Care</h3><p class="text-xs text-slate-500 mb-6">Full dental restoration</p><div class="mb-6"><span class="text-4xl font-serif font-bold text-slate-900">₹2,999</span><span class="text-slate-500 text-sm">/visit</span></div><ul class="space-y-3 mb-8 text-xs text-slate-600"><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>All Premium Services</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Cosmetic Consultation</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Advanced Imaging</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>Dedicated Specialist</li><li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i>24/7 Emergency Line</li></ul><a href="contact.html" class="btn-outline w-full">Get Started</a></div>
+    </div>
+  </div></div>
+  <div class="py-24 bg-slate-50"><div class="container mx-auto px-6 max-w-3xl">
+    <div class="text-center mb-14" data-aos="fade-up"><span class="text-primary text-xs font-semibold uppercase tracking-[0.22em]">FAQ</span><h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-900">Frequently Asked Questions</h2></div>
+    <div class="space-y-4">
+      <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition" data-aos="fade-up"><div class="flex justify-between items-center p-6 faq-question"><h3 class="font-serif text-base text-slate-900">Is dental treatment painful?</h3><i class="fa-solid fa-chevron-down text-primary faq-icon"></i></div><div class="faq-answer px-6 text-slate-600 text-sm pb-6 leading-relaxed">At HybriDent, we use advanced painless techniques and local anesthesia to ensure you feel no discomfort during any procedure.</div></div>
+      <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="80"><div class="flex justify-between items-center p-6 faq-question"><h3 class="font-serif text-base text-slate-900">How often should I visit the dentist?</h3><i class="fa-solid fa-chevron-down text-primary faq-icon"></i></div><div class="faq-answer px-6 text-slate-600 text-sm pb-6 leading-relaxed">We recommend a checkup and cleaning every 6 months. However, our doctors might suggest more frequent visits based on your dental condition.</div></div>
+      <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="160"><div class="flex justify-between items-center p-6 faq-question"><h3 class="font-serif text-base text-slate-900">Do you offer emergency dental services?</h3><i class="fa-solid fa-chevron-down text-primary faq-icon"></i></div><div class="faq-answer px-6 text-slate-600 text-sm pb-6 leading-relaxed">Yes, we provide 24/7 emergency dental care. Call us immediately for severe toothaches, broken teeth, or other dental emergencies.</div></div>
+      <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="240"><div class="flex justify-between items-center p-6 faq-question"><h3 class="font-serif text-base text-slate-900">Do you accept insurance?</h3><i class="fa-solid fa-chevron-down text-primary faq-icon"></i></div><div class="faq-answer px-6 text-slate-600 text-sm pb-6 leading-relaxed">Yes, we accept most major dental insurance plans. Contact our front desk to verify your coverage and benefits.</div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="text-slate-400 pt-20 pb-8" style="background:linear-gradient(180deg,#0F172A 0%,#0b1220 100%);">
+  <div class="container mx-auto px-6 grid md:grid-cols-4 gap-10 mb-14">
+    <div>
+      <div class="flex items-center gap-2 mb-5"><span class="brand-logo" style="width:36px;height:36px;border-radius:12px;"><img src="tooth-logo.svg" alt="" style="width:20px;height:20px;" loading="lazy" decoding="async"></span><span class="text-xl font-serif font-bold text-white">HybriDent</span></div>
+      <p class="text-xs leading-relaxed mb-6">Advanced technology for a healthier, brighter smile. Trusted by thousands of patients.</p>
+      <div class="flex gap-3">
+        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition"><i class="fa-brands fa-twitter text-sm"></i></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+      </div>
+    </div>
+    <div><h4 class="font-serif text-base text-white mb-5">Quick Links</h4><ul class="space-y-3 text-xs"><li><a href="about.html" class="hover:text-primary transition">About Us</a></li><li><a href="services.html" class="hover:text-primary transition">Services</a></li><li><a href="gallery.html" class="hover:text-primary transition">Gallery</a></li><li><a href="pricing.html" class="hover:text-primary transition">Pricing</a></li><li><a href="contact.html" class="hover:text-primary transition">Contact</a></li></ul></div>
+    <div><h4 class="font-serif text-base text-white mb-5">Contact</h4><ul class="space-y-3 text-xs">
+      <li class="flex gap-3"><i class="fa-solid fa-location-dot text-primary mt-0.5"></i> Jaipur, Rajasthan, India</li>
+      <li class="flex gap-3"><i class="fa-solid fa-phone text-primary"></i> <a href="tel:+919887420145" class="hover:text-primary">+91 98874 20145</a></li>
+      <li class="flex gap-3"><i class="fa-brands fa-whatsapp text-primary"></i> <a href="https://wa.me/919887420145" target="_blank" class="hover:text-primary">WhatsApp: +91 98874 20145</a></li>
+      <li class="flex gap-3"><i class="fa-solid fa-envelope text-primary"></i> hello@hybriddent.com</li>
+      <li class="flex gap-3"><i class="fa-solid fa-clock text-primary"></i> Mon–Sat: 9AM – 7PM</li>
+    </ul></div>
+    <div><h4 class="font-serif text-base text-white mb-5">Newsletter</h4><p class="text-xs mb-4">Get dental tips and exclusive offers.</p><form onsubmit="event.preventDefault();showToast('Subscribed!','You will receive dental tips and offers soon.','success');this.reset();"><div class="flex"><input type="email" placeholder="Your email" class="w-full px-3 py-2.5 rounded-l-xl bg-white/5 border border-white/10 focus:outline-none focus:border-primary text-xs text-white" required><button class="px-3 py-2.5 rounded-r-xl text-white transition" style="background:linear-gradient(135deg,#0D9488,#0EA5E9);"><i class="fa-solid fa-paper-plane text-xs"></i></button></div></form></div>
+  </div>
+  <div class="border-t border-white/10 pt-6 text-center text-[11px]">&copy; 2024 HybriDent. All rights reserved.</div>
+</footer>
+
+<!-- ==================== FLOATING STACK (Right Side) ==================== -->
+<div class="floating-stack" id="floatingStack">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919887420145" target="_blank" class="float-btn whatsapp-btn" data-tip="Chat on WhatsApp" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <!-- Call -->
+  <a href="tel:+919887420145" class="float-btn" data-tip="Call +91 98874 20145" aria-label="Call">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+  <!-- Back to Top -->
+  <button id="backToTop" class="float-btn hidden-btn" data-tip="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</div>
+
+<!-- ==================== CHAT TOGGLE (Bottom Right - Robot) ==================== -->
+<button id="chatToggle" aria-label="Open AI Chat">
+  <i class="fa-solid fa-robot"></i>
+  <span class="dot"></span>
+</button>
+
+<!-- ==================== CHAT WINDOW ==================== -->
+<div id="chatWindow">
+  <div class="chat-header">
+    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+    <div class="flex-1"><p class="font-bold text-sm" style="font-family:'Outfit',sans-serif;">HybriDent AI</p><p class="text-[11px] opacity-90 flex items-center gap-1.5"><span style="width:7px;height:7px;background:#4ade80;border-radius:50%;display:inline-block;" id="statusDot"></span> <span id="statusText">AI Assistant Online</span></p></div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-suggestions" id="chatSuggestions">
+    <button data-q="What are your prices?">Pricing</button>
+    <button data-q="What are your opening hours?">Hours</button>
+    <button data-q="How do I book an appointment?">Book</button>
+    <button data-q="Do you offer emergency dental care?">Emergency</button>
+  </div>
+  <div class="chat-input-wrap">
+    <input type="text" id="chatInput" placeholder="Ask me anything...">
+    <button id="chatSend"><i class="fa-solid fa-paper-plane"></i></button>
+  </div>
+</div>
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
